@@ -1,3 +1,12 @@
+const loadComponent = () => {
+  const loader = document.getElementById("loader");
+
+  //   oculta el elemento despues de 3 segundos
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 2000);
+};
+
 const items = [
     {
       id: 1,
@@ -24,3 +33,20 @@ const items = [
       quantity: 20
     }
   ]
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadComponent();
+    showProducts()
+    // Se pone así en caso de que se vayan a ejecuatr más funciones
+  });
+
+const shopIcon = document.getElementById("cart-shop")
+
+const shopCloseIcon = document.getElementById("close-cart")
+  
+  shopIcon.addEventListener("click", () => {
+    cart.classList.remove("hide")
+  })
+  shopCloseIcon.addEventListener("click", () => {
+    cart.classList.add("hide")
+  })
