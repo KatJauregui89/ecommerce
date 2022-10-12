@@ -38,6 +38,29 @@ body.dark{
   --border-color: hsl(0, 0%, 20%);
 }
 
+body{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "header header header"
+  "main main main"
+  "main main main"
+  "main main main"
+  "main main main"
+  "footer footer footer";
+}
+header{
+  grid-area: header;
+
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+  text-align: center;
+}
+
 .loader {
   background-color: var(--title-color);
   width: 100%;
