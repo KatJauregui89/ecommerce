@@ -5,6 +5,7 @@
 :root {
   /*========== Colors ==========*/
   --first-color: hsl(354, 78%, 60%);
+  --button-gray: hsl(0, 0%, 75%);
   --button-color: hsl(0, 0%, 17%);
   --button-color-alt: hsl(0, 0%, 21%);
   --card-color: hsl(0, 0%, 90%);
@@ -29,7 +30,7 @@
 body{
   background-color: var(--body-color);
   color: var(--text-color);
-  padding: 1rem;
+  /* padding: 1rem; */
   font-family: var(--body-font);
 }
 
@@ -49,6 +50,17 @@ img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+header, .section-showall{
+  padding: 1rem;
+}
+
+.nav-btns{
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+  color: var(--title-color);
 }
 
 .text-diff{
@@ -109,7 +121,7 @@ h1,h2,h3{
 }
 
 .btn-discover{
-  background-color: var(--text-color);
+  background-color: var(--button-gray);
 }
 
 .btn-add{
@@ -125,10 +137,16 @@ h1,h2,h3{
   grid-template-columns: 50% 50%;
 }
 
+.title-showall{
+  font-weight: bold;
+}
+
 .title--container{
   padding: 1rem;
   margin: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title--container.one, .title--container.three{
@@ -137,8 +155,8 @@ h1,h2,h3{
 }
 
 
-footer{
-  padding-top: 3rem;
+.footer-container{
+  padding: 3rem 1rem 1rem 1rem;
   background-color: var(--container-color);
   display: flex;
   flex-direction: column;
@@ -162,13 +180,14 @@ h6{
 }
 
 .icon{
-  width: 25px;
-  height: auto;
+  font-size: 1.75rem;
+  filter: var(--title-color);
 }
 
 .copyright{
-  margin: 1.5rem;
+  padding: 1.5rem;
   text-align: center;
+  background-color: var(--container-color);
 }
 
 .loader {
@@ -209,11 +228,12 @@ nav{
 .nav-bar{
   display: flex;
   align-items: center;
-  
+  color: var(--title-color);
 }
 
 .nav-logo{
   width: 40px;
+  fill: var(--first-color);
 }
 
 
@@ -271,6 +291,7 @@ nav{
 
 
 
+
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
 /*
@@ -297,4 +318,52 @@ nav{
   100% {
     top: 0;
   }
+}
+
+@media screen and (min-width: 678px){
+  .ghost-container{
+    /* display: none; */
+    width: 300px;
+  }
+  .photo-container{
+    max-width: 300px;
+    position: absolute;
+    top: 0;
+    /* right: auto; */
+    height: 450px;
+  }
+
+  .img-header{
+    position: static;
+  }
+  .header-info{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .footer-container{
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .title--container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title--container.two{
+    border-right: 1px solid var(--text-color);
+    margin-right: 0;
+  }
+
+  .section-showall{
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-right: 4em;
+    margin-left: 4em;
+  }
+
+
 }

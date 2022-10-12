@@ -7,6 +7,18 @@ const loadComponent = () => {
   }, 2000);
 };
 
+const themeIcon = document.getElementById("theme-btn")
+
+themeIcon.addEventListener("click", () =>{
+  document.body.classList.toggle("dark")
+
+  if (themeIcon.classList.contains("bx-moon")){
+    themeIcon.classList.replace("bx-moon", "bx-sun")
+  }else{
+    themeIcon.classList.replace("bx-sun", "bx-moon")
+  }
+})
+
 const items = [
     {
       id: 1,
