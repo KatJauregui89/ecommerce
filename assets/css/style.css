@@ -158,6 +158,47 @@ nav{
   top: 1rem;
   right: 1.5rem;
 }
+footer{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content:center;
+  align-items: flex-start;
+  align-content: centers;
+}
+.rights{
+  
+  align-self: center;
+}
+
+footer section{
+  text-align: left;
+  margin: 5%;
+}
+.social{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+
+}
+.socialnetwork{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+.social img{
+  height: 100%;
+  width: 100%;
+}
+.social-img{
+  height: 65%;
+  width: 5%;
+}
+
+
 
 
 /*=============== THEME ===============*/
