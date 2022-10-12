@@ -119,6 +119,57 @@ h1,h2,h3{
 
 }
 
+.section-showall{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.title--container{
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.title--container.one, .title--container.three{
+  border-right: 1px solid var(--text-color);
+  margin-right: 0;
+}
+
+
+footer{
+  padding-top: 3rem;
+  background-color: var(--container-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.footer-about > small, .footer-product > small{
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.social-icons{
+  display: flex;
+  gap: 1rem;
+}
+
+h6{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon{
+  width: 25px;
+  height: auto;
+}
+
+.copyright{
+  margin: 1.5rem;
+  text-align: center;
+}
 
 .loader {
   background-color: var(--title-color);
@@ -218,9 +269,6 @@ nav{
   right: 1.5rem;
 }
 
-.section-showall{
-  display: none;
-}
 
 
 /*=============== THEME ===============*/
