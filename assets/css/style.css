@@ -76,6 +76,9 @@ header, .section-showall{
   width: 70%;
   height: 80%;
   max-height: 495px;
+
+
+
   position: absolute;
   top: 0;
   right: 0px;
@@ -133,7 +136,7 @@ h1,h2,h3{
 }
 
 .section-showall{
-  margin-top: 3rem;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -323,26 +326,42 @@ nav{
 
 @media screen and (min-width: 678px){
   .ghost-container{
-    /* display: none; */
-    width: 300px;
+    display: none;
+   
   }
   .photo-container{
     max-width: 300px;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    /* right: auto; */
+    right: auto; */
     height: 450px;
+
+    justify-content: center;
+    align-items: flex-end;
+    justify-self: flex-end;
+    position: relative;
+    top: -82px;
+    z-index: -1;
   }
 
   .img-header{
-    position: static;
+    position: relative;
+    top: 9rem;
+    /* left: 1rem; */
   }
   .header-info{
+ 
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2rem;
+    /* position: relative;
+    top: -82px; */
+    /* z-index: -1; */
   }
 
   .footer-container{
@@ -366,6 +385,7 @@ nav{
     grid-template-columns: 25% 25% 25% 25%;
     margin-right: 4em;
     margin-left: 4em;
+    margin-top: 0;
   }
 
 
