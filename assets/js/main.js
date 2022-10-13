@@ -1,12 +1,13 @@
+// LOADER
 const loadComponent = () => {
   const loader = document.getElementById("loader");
 
-  //   oculta el elemento despues de 3 segundos
   setTimeout(() => {
     loader.classList.add("hide");
   }, 2000);
 };
 
+// -------DARK MODE---------------
 const themeIcon = document.getElementById("theme-btn")
 
 themeIcon.addEventListener("click", () =>{
@@ -19,6 +20,7 @@ themeIcon.addEventListener("click", () =>{
   }
 })
 
+// PRODUCTOS
 const items = [
     {
       id: 1,
@@ -46,19 +48,45 @@ const items = [
     }
   ]
 
-  document.addEventListener("DOMContentLoaded", () => {
-    loadComponent();
-    showProducts()
-    // Se pone así en caso de que se vayan a ejecuatr más funciones
-  });
+  // MOSTRAR OCULTAR CARRITO
+  const cart = document.getElementById("cart-container")
+  const shopIcon = document.getElementById("cart-shop")
+  const shopCloseIcon = document.getElementById("close-cart")
 
-const shopIcon = document.getElementById("cart-shop")
-
-const shopCloseIcon = document.getElementById("close-cart")
-  
   shopIcon.addEventListener("click", () => {
     cart.classList.remove("hide")
   })
   shopCloseIcon.addEventListener("click", () => {
     cart.classList.add("hide")
   })
+
+  // MOSTRAR PRODUCTOS EN PÁGINA
+const showProducts = () => {
+  const productContainer = document.getElementById("products-list")
+
+let fragment = ``
+
+items.forEach(producto => {
+  fragment += `
+  <div class="product-card">
+    <img src="${producto.image}" alt="">
+  </div>
+  <button class="btn btn-add"></button>
+  <div class="product-info">
+    <span class="price">$${producto.price}</span>
+    <span class="Stock">Stock:${producto.quantity}</span>
+    <span class="product-type">${producto.name}</span>
+  </div>
+  `
+
+})
+
+  productContainer.innerHTML = fragment
+}
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadComponent();
+    showProducts()
+  });
+
+  

@@ -293,6 +293,16 @@ nav{
   right: 1.5rem;
 }
 
+.product-card{
+  background-color: var(--card-color);
+  padding: 0.25rem 0;
+}
+
+.btn{
+  border-radius: 50%;
+  padding: 00.5rem;
+  font-size: 1.2rem;
+}
 
 
 
