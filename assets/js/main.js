@@ -64,24 +64,61 @@ const items = [
 const showProducts = () => {
   const productContainer = document.getElementById("products-list")
 
-let fragment = ``
+  let fragment = ``
 
-items.forEach(producto => {
-  fragment += `
-  <div class="product-card">
-    <img src="${producto.image}" alt="">
-  </div>
-  <button class="btn btn-add"></button>
-  <div class="product-info">
-    <span class="price">$${producto.price}</span>
-    <span class="Stock">Stock:${producto.quantity}</span>
-    <span class="product-type">${producto.name}</span>
-  </div>
+  items.forEach(producto => {
+   fragment += `
+   <div class="product-card" id="${producto.id}">
+     <img src="${producto.image}" alt="Academlo merch">
+     <button class="btn btn-add"><i class='bx bxs-plus-circle' ></i></button>
+   </div>
+   <div class="product-info">
+      <span class="price">$${producto.price}</span>
+      <span class="Stock">Stock:${producto.quantity}</span>
+      <span class="product-type">${producto.name}</span>
+   </div>
   `
 
 })
 
   productContainer.innerHTML = fragment
+
+  cartFuncionality()
+}
+
+function cartFuncionality(){
+  const buttons = document.querySelectorAll(".btn-add")
+  const cart = []
+
+  buttons.forEach(button => {
+    button.addEventListener("click", e =>{
+      const id = parseInt(e.target.parentElement.id)
+      const selectedProduct = items.find(item => item.id === id)
+      
+      let index = cart.indexOf(selectedProduct)
+
+      if (index !== -1){
+        if(cart[index].quantity <= cart[index].cantidad){
+          alert("Ya no hay stock ):")
+        }else{
+          cart[index].cantidad++
+        }
+      }else{
+        selectedProduct.cantidad = 1
+        cart.push(selectedProduct)
+
+      }
+      console.log(cart);
+      showProducts(cart)
+    })
+  })
+}
+
+function showProductsInCart(cart){
+  const productsInCart = document.getElementById("product-selected")
+  let fragment = ``
+
+  
 }
 
   document.addEventListener("DOMContentLoaded", () => {
