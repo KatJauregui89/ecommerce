@@ -7,6 +7,12 @@ const loadComponent = () => {
   }, 2000);
 };
 
+// --------MENÚ HAMBURGUESA---------
+const menuBtn = document.getElementById("menu-btn")
+const menu = document.getElementById("nav-menu")
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("visible")
+})
 // -------DARK MODE---------------
 const themeIcon = document.getElementById("theme-btn")
 
@@ -118,7 +124,7 @@ function showProductsInCart(cart){
   const productsInCart = document.getElementById("product-selected")
   let fragment = ``
 
-  
+
 }
 
   document.addEventListener("DOMContentLoaded", () => {
